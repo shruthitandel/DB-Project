@@ -1,0 +1,12 @@
+C:\Users\akrit\source\repos\ProjectDB\BO\obj\Debug\BO.csprojResolveAssemblyReference.cache
+C:\Users\akrit\source\repos\ProjectDB\BO\obj\Debug\BO.csproj.CoreCompileInputs.cache
+C:\Users\akrit\source\repos\ProjectDB\BO\bin\Debug\BO.dll
+C:\Users\akrit\source\repos\ProjectDB\BO\bin\Debug\BO.pdb
+C:\Users\akrit\source\repos\ProjectDB\BO\obj\Debug\BO.dll
+C:\Users\akrit\source\repos\ProjectDB\BO\obj\Debug\BO.pdb
+C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BO\bin\Debug\BO.dll
+C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BO\bin\Debug\BO.pdb
+C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BO\obj\Debug\BO.csprojResolveAssemblyReference.cache
+C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BO\obj\Debug\BO.csproj.CoreCompileInputs.cache
+C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BO\obj\Debug\BO.dll
+C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BO\obj\Debug\BO.pdb

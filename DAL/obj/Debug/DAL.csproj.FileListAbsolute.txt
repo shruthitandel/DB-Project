@@ -1,0 +1,8 @@
+c:\users\akrit\source\repos\ProjectDB\DAL\bin\Debug\DAL.dll
+c:\users\akrit\source\repos\ProjectDB\DAL\bin\Debug\DAL.pdb
+c:\users\akrit\source\repos\ProjectDB\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+c:\users\akrit\source\repos\ProjectDB\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+c:\users\akrit\source\repos\ProjectDB\DAL\obj\Debug\DAL.dll
+c:\users\akrit\source\repos\ProjectDB\DAL\obj\Debug\DAL.pdb
+C:\Users\akrit\source\repos\ProjectDB\DAL\bin\Debug\BO.dll
+C:\Users\akrit\source\repos\ProjectDB\DAL\bin\Debug\BO.pdb
