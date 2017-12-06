@@ -19,7 +19,6 @@ namespace ProjectDB
            if(!IsPostBack)
             {
                 TextBox1.Text = "";
-                Label1.Visible = false;
                 DIV1.Visible = false;
                 DIV2.Visible = false;
                 DIV3.Visible = false;
@@ -31,10 +30,6 @@ namespace ProjectDB
             }
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            Label1.Visible = true;
-        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -57,24 +52,28 @@ namespace ProjectDB
                 string tracktitle = row["tracktitle"].ToString();
                 string artistname = row["artistname"].ToString();
                 string trackDuration = row["trackDuration"].ToString();
-                result1 += "<h2>" + tracktitle + "</h2><p>" + artistname + "</p><p>" + trackDuration + "</p>";
+                result1 += "<h2><a href='Tracks.aspx' runat ='server'>" + tracktitle + "</a></h2><p><a href='Artists.aspx' runat ='server'>" + artistname + " </a></p><p>" + trackDuration + "</p>";
             }
 
             foreach (DataRow row in dt2.Rows)
             {
                 string artistname = row["artistname"].ToString();
-                result2 += "<h2>" + artistname + "</h2>";
+                int artistid = Convert.ToInt32(row["artistid"]);
+                //Session["artistid"] = artistid;
+                result2 += "<h2><a href='Artists.aspx?artistid=" +artistid+ "' runat ='server'>" + artistname + "</a></h2>";
             }
 
             foreach (DataRow row in dt3.Rows)
             {
                 string albumname = row["albumtitle"].ToString();
-                result3 += "<h2>" + albumname + "</h2>";
+                int albumid = Convert.ToInt32(row["albumid"]);
+                //Session["albumid"] = albumid;
+                result3 += "<h2><a href='Album.aspx?albumid=" +albumid+ "' runat ='server'>" + albumname + "</a> </h2>";
             }
             foreach (DataRow row in dt4.Rows)
             {
                 string playlistname = row["playlisttitle"].ToString();
-                result4 += "<h2>" + playlistname + "</h2>";
+                result4 += "<h2><a href='Playlist.aspx' runat ='server'>" + playlistname + " </a></h2>";
             }
 
             DIV1.InnerHtml = result1;

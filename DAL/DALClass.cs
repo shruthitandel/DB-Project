@@ -203,6 +203,142 @@ namespace DAL
 
         }
 
+        public DataTable GetArtistTracks(int id)
+        {
+            try
+            {
+                // List<BOClass> searchtrack = new List<BOClass>();
+                // BOClass bo = new BOClass();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "giveArtistTrack";
+                cmd.Parameters.AddWithValue("@artistid", id);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+        public int likeArtist(int artistid, string username, DateTime datetoday)
+        {
+            try
+            {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "likeArtists";
+                    cmd.Parameters.AddWithValue("@artistid", artistid);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@likedate", datetoday);
+                    int a = cmd.ExecuteNonQuery();
+                    return a;
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public int checkIfLikeExist(int artistid, string username)//checking the user name and password.If matched count 1 not 0.
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "checkIfLikeExist";
+                cmd.Parameters.AddWithValue("@artistid", artistid);
+                cmd.Parameters.AddWithValue("@username", username);
+                int a = cmd.ExecuteNonQuery();
+                return a;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public int dislikeArtist(int artistid, string username)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "dislikeArtist";
+                cmd.Parameters.AddWithValue("@artistid", artistid);
+                cmd.Parameters.AddWithValue("@username", username);
+                int a = cmd.ExecuteNonQuery();
+                return a;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataTable GetAlbumTracks(int id)
+        {
+            try
+            {
+                // List<BOClass> searchtrack = new List<BOClass>();
+                // BOClass bo = new BOClass();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "giveAlbumTrack";
+                cmd.Parameters.AddWithValue("@albumid", id);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+
+
+
     }
 
 }

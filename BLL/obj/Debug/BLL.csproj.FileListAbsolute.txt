@@ -8,13 +8,3 @@ c:\users\akrit\source\repos\ProjectDB\BLL\obj\Debug\BLL.dll
 c:\users\akrit\source\repos\ProjectDB\BLL\obj\Debug\BLL.pdb
 C:\Users\akrit\source\repos\ProjectDB\BLL\bin\Debug\BO.dll
 C:\Users\akrit\source\repos\ProjectDB\BLL\bin\Debug\BO.pdb
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\bin\Debug\BLL.dll
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\bin\Debug\BLL.pdb
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\bin\Debug\BO.dll
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\bin\Debug\DAL.dll
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\bin\Debug\BO.pdb
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\bin\Debug\DAL.pdb
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\obj\Debug\BLL.dll
-C:\Users\Nitin\Desktop\6083_DB\Assignments\Project\ProjectDB\BLL\obj\Debug\BLL.pdb

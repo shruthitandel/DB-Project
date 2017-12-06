@@ -48,6 +48,30 @@ namespace BLL
             DataTable dt = d.GetPlayListByKeyword(keyword, username);
             return dt;
         }
-
+        public DataTable GetArtistTracks(int artistid)
+        {
+            DataTable dt = d.GetArtistTracks(artistid);
+            return dt;
+        }
+        public int likeArtist(int artistid, string username, DateTime datetoday)
+        {
+            int a = d.likeArtist(artistid, username, datetoday);
+            return a;
+        }
+        public int checkIfLikeExist(int artistid, string username)
+        {
+            int a = d.checkIfLikeExist(artistid, username);
+            return a;
+        }
+        public int dislikeArtist(int artistid, string username)
+        {
+            int a = d.dislikeArtist(artistid, username);
+            return a;
+        }
+        public DataTable GetAlbumTracks(int artistid)
+        {
+            DataTable dt = d.GetAlbumTracks(artistid);
+            return dt;
+        }
     }
 }

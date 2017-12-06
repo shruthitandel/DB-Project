@@ -4,6 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <style>
+        .message
+        {
+            color: red;
+        }
+    </style>
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -34,10 +40,12 @@
                 <tr>
                     <td class="auto-style2">Enter Keyword</td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="377px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" Width="377px" onblur="message.style.display='none';" onclick="message.style.display='block';"></asp:TextBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="Search by tracks/artists/albums/playlists"></asp:Label>
+                       <div id ="message" style="display: none" class="message";>
+                           Search by Tracks/Artists/Albums/Plalists
+                        </div>
                     </td>
                 </tr>
                 <tr>
