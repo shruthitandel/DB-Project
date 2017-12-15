@@ -4,8 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 using BLL;
-
+using System.Text.RegularExpressions;
+using Microsoft.Security.Application;
 
 namespace ProjectDB
 {
@@ -15,14 +18,12 @@ namespace ProjectDB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+            if (Session["Name"] != null && Session["username"] != null)
             {
-                TextBox1.Text = "";
-                TextBox2.Text = "";
+                Response.Redirect("Home.aspx", false);
             }
         }
-
-       
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
@@ -31,13 +32,27 @@ namespace ProjectDB
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string useraname = TextBox1.Text;
-            string password = TextBox2.Text;
-            int a = bl.userlogin(useraname, password);
-            if (a != 0)
+            string useraname = Encoder.HtmlAttributeEncode(TextBox1.Value);
+            System.Diagnostics.Debug.WriteLine(useraname);
+            string password = Encoder.HtmlAttributeEncode(TextBox2.Value);
+            /*if(useraname==null|| useraname == ""|| password ==null || password == "")
             {
+                ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Please enter username and password');", true);
+                return;
+            }
+
+            if (!isAlphaNumeric(useraname))
+            {
+                ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Please enter only Aphanumeric username');", true);
+                return;
+            }*/
+            String name = bl.userlogin(useraname, password); // added for fetching name of the signed in user
+
+            if (name != null && name != "")
+            {
+                Session["Name"] = name;
                 Session["username"] = useraname;
-                Response.Redirect("Home.aspx");
+                Response.Redirect("Home.aspx", false);
 
             }
             else
@@ -45,5 +60,11 @@ namespace ProjectDB
                 ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Invalid Credentials.');", true);
             }
         }
+
+        /* public static Boolean isAlphaNumeric(string strToCheck)
+         {
+             Regex rg = new Regex(@"^[a-zA-Z0-9\s,]*$");
+             return rg.IsMatch(strToCheck);
+         }*/
     }
 }

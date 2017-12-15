@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AntiXSSLibrary">
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Information Security\AntiXSS Library v4.2\NET40\AntiXSSLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -67,11 +70,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Album.aspx" />
+    <Content Include="AllPlaylist.aspx" />
     <Content Include="Artists.aspx" />
+    <Content Include="assets\album.png" />
+    <Content Include="assets\playbutton.png" />
+    <Content Include="assets\user.png" />
+    <Content Include="ConnectOtherUser.aspx" />
+    <Content Include="editaccount.aspx" />
     <Content Include="Music.Master" />
     <Content Include="Playlist.aspx" />
     <Content Include="Tracks.aspx" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="myaccount.aspx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -85,7 +95,9 @@
     <Content Include="Login.aspx" />
     <Content Include="SearchMusic.aspx" />
     <Content Include="Signup.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Album.aspx.cs">
@@ -95,12 +107,33 @@
     <Compile Include="Album.aspx.designer.cs">
       <DependentUpon>Album.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AllPlaylist.aspx.cs">
+      <DependentUpon>AllPlaylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllPlaylist.aspx.designer.cs">
+      <DependentUpon>AllPlaylist.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Artists.aspx.cs">
       <DependentUpon>Artists.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Artists.aspx.designer.cs">
       <DependentUpon>Artists.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectOtherUser.aspx.cs">
+      <DependentUpon>ConnectOtherUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConnectOtherUser.aspx.designer.cs">
+      <DependentUpon>ConnectOtherUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editaccount.aspx.cs">
+      <DependentUpon>editaccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editaccount.aspx.designer.cs">
+      <DependentUpon>editaccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -159,6 +192,13 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="myaccount.aspx.cs">
+      <DependentUpon>myaccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myaccount.aspx.designer.cs">
+      <DependentUpon>myaccount.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
@@ -170,6 +210,7 @@
       <Name>BO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
+using System.Text.RegularExpressions;
 
 namespace ProjectDB
 {
@@ -33,15 +34,38 @@ namespace ProjectDB
             string password = TextBox4.Text;
             string repassword = TextBox5.Text;
             string city = TextBox6.Text;
+            /*if(name==null|| name=="" || email == null || email =="" || username == null || username == "" || password == null || password == "" || city == null || city == "" )
+            {
+                ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('All Fields are Mandatory');", true);
+                return;
+            }*/
+
+            if (!isAlphaNumeric(name) || !isAlphaNumeric(username) || !isAlphaNumeric(city))
+            {
+                ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Either Name, username or city is Not Aphanumeric');", true);
+                return;
+            }
+
+            if (!password.Equals(repassword))
+            {
+                ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Password does not match');", true);
+                return;
+            }
             int result = bl.insertuserdetails(name, email, username, password, city);
             if (result != 0)
             {
-                ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Registeration is successfull');window.location='Login.aspx';", true);
+                ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Registration is successfull'); window.location ='Login.aspx'", true);
             }
             else
             {
                 ClientScript.RegisterStartupScript(Page.GetType(), "alert", "alert('Username already exists.');", true);
             }
+        }
+
+        public static Boolean isAlphaNumeric(string strToCheck)
+        {
+            Regex rg = new Regex(@"^[a-zA-Z0-9\s,]*$");
+            return rg.IsMatch(strToCheck);
         }
     }
 }
