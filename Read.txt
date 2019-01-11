@@ -1,1 +1,1 @@
-assss jklk Read
+It is a basic ASP.Net web application with SQL database which provides users with information about artists and their songs and albums and also, with access to their songs via streaming by integrating Spotify widget in our application.
